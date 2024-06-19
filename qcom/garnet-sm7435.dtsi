@@ -233,24 +233,23 @@
 	pinctrl-1 = <&mi_ts_spi_suspend>;
 	n16-touch@0 {
 		status = "ok";
-		compatible = "goodix,n16-9916r-spi","focaltech,n16-3683g-spi";
+		compatible = "goodix,gt9916S","focaltech,n16-3683g-spi";
 		reg = <0>;
 		spi-max-frequency = <12000000>;
 		interrupt-parent = <&tlmm>;
-		interrupts = <98 0x2008>;
-		pinctrl-names = "pmx_ts_active", "pmx_ts_suspend";
+		interrupts = <98 IRQ_TYPE_LEVEL_LOW>;
+		pinctrl-names = "default", "sleep";
 		pinctrl-0 = <&mi_ts_active>;
 		pinctrl-1 = <&mi_ts_int_suspend &mi_ts_reset_suspend>;
-		iovdd-supply = <&touch_vddio>;
-		avdd-supply = <&L9E>;
 
 		/* 1st supply from gt9916r */
 		goodix,iovdd-name = "iovdd";
+		iovdd-supply = <&touch_vddio>;
 		goodix,avdd-name = "avdd";
-		/*goodix,iovdd-gpio = <&tlmm 03 0x0>;*/
-		goodix,reset-gpio = <&tlmm 96 0x00>;
-		goodix,irq-gpio = <&tlmm 98 0x2008>;
-		goodix,irq-flags = <2>;
+		avdd-supply = <&L9E>;
+		goodix,reset-gpio = <&tlmm 96 GPIO_ACTIVE_HIGH>;
+		goodix,irq-gpio = <&tlmm 98 GPIO_TRANSITORY>;
+		goodix,irq-flags = <IRQ_TYPE_EDGE_FALLING>;
 		goodix,panel-max-x = <1220>;
 		goodix,panel-max-y = <2712>;
 		goodix,panel-max-w = <255>;
@@ -263,9 +262,7 @@
 		goodix,support-super-resolution = <1>;
 		goodix,firmware-name = "goodix_firmware_CSOT.bin";
 		goodix,config-name = "goodix_cfg_group_CSOT.bin";
-		goodix,touch-expert-array = <2 3 2 2
-					     4 3 3 2
-					     3 3 4 2>;
+
 		/* 2st supply from focal3683g */
 		focaltech,iovdd-name = "iovdd";
 		focaltech,avdd-name = "avdd";
