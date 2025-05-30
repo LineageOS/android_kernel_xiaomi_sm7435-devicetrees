@@ -12,6 +12,7 @@
 					39 00 00 00 00 00 03 5F 04 40
 				];
 				qcom,mdss-dsi-nolp-command-state = "dsi_hs_mode";
+				qcom,mdss-dsi-nolp-command-update = <0x51 0x1 0x2>;
 
 				mi,mdss-dsi-hbm-on-command = [
 					39 00 00 00 00 00 03 51 0F FF];
