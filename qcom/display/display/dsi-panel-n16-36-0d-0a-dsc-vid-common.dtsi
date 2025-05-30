@@ -30,11 +30,13 @@
 
 			mi,mdss-dsi-doze-hbm-command = [
 				15 00 00 00 00 00 02 6D 01
+				39 00 00 00 00 00 03 51 00 FC
 			];
 			mi,mdss-dsi-doze-hbm-command-state = "dsi_hs_mode";
 
 			mi,mdss-dsi-doze-lbm-command = [
 				15 00 00 00 00 00 02 6D 00
+				39 00 00 00 00 00 03 51 00 14
 			];
 			mi,mdss-dsi-doze-lbm-command-state = "dsi_hs_mode";
 
