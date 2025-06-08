@@ -427,8 +427,8 @@ dtbo-$(CONFIG_ARCH_PARROT) += parrot-rumi-overlay.dtbo \
 	parrot-idp-wcn6755-overlay.dtbo \
 	parrot-qrd-wcn6755-overlay.dtbo \
 	parrot-idp-wcn6755-pm8350b-overlay.dtbo \
-	parrot-idp-wcn6755-nopmi-overlay.dtbo
-
+	parrot-idp-wcn6755-nopmi-overlay.dtbo \
+	garnet-sm7435-pm8350b-overlay.dtbo
 
 parrot-rumi-overlay.dtbo-base := parrot.dtb
 parrot-atp-overlay.dtbo-base := parrot.dtb parrotp.dtb parrot-sg.dtb parrotp-sg.dtb
@@ -455,6 +455,7 @@ parrot-idp-wcn6755-overlay.dtbo-base := parrot.dtb parrotp.dtb parrot-sg.dtb par
 parrot-qrd-wcn6755-overlay.dtbo-base := parrot.dtb parrotp.dtb parrot-sg.dtb parrotp-sg.dtb
 parrot-idp-wcn6755-pm8350b-overlay.dtbo-base := parrot.dtb parrotp.dtb parrot-sg.dtb parrotp-sg.dtb
 parrot-idp-wcn6755-nopmi-overlay.dtbo-base := parrot.dtb parrotp.dtb parrot-sg.dtb parrotp-sg.dtb
+garnet-sm7435-pm8350b-overlay.dtbo-base := parrot.dtb parrotp.dtb
 else
 dtb-$(CONFIG_ARCH_PARROT) += parrot-rumi.dtb \
 	parrot-atp.dtb \
